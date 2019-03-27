@@ -52,7 +52,7 @@ RUN curl -ksSL -o tmp.tar.gz https://github.com/mskcc/vcf2maf/archive/v1.6.16.ta
     mkdir vcf2maf && \
     tar -C vcf2maf --strip-components 1 -zxf tmp.tar.gz && \
     cd vcf2maf && \
-    chmod +x *.pl \
+    chmod +x *.pl &&\
     cd .. && \
     rm /bin/tmp.tar.gz
 ENV PATH $PATH:/bin/vcf2maf
