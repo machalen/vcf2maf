@@ -50,8 +50,8 @@ RUN curl -L http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/liftOver > /us
 WORKDIR /bin
 RUN curl -ksSL -o tmp.tar.gz https://github.com/mskcc/vcf2maf/archive/v1.6.16.tar.gz && \
     mkdir vcf2maf && \
-    tar --strip-components 1 -zxf tmp.tar.gz && \
-    tar -C bcftools --strip-components 1 -jxf tmp2.tar.gz && \
-    cd bcftools && \
-    chmod +x *.pl
-ENV PATH $PATH:/bin/bcftools
+    tar -C vcf2maf --strip-components 1 -zxf tmp2.tar.gz && \
+    cd vcf2maf && \
+    chmod +x *.pl \
+    rm /bin/tmp2.tar.gz
+ENV PATH $PATH:/bin/vcf2maf
