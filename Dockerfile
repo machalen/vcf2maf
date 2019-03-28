@@ -56,5 +56,8 @@ RUN curl -ksSL -o tmp.tar.gz https://github.com/mskcc/vcf2maf/archive/v1.6.16.ta
     cd .. && \
     rm /bin/tmp.tar.gz
 ENV PATH $PATH:/bin/vcf2maf
+
+#Set again the working directory
+WORKDIR /
 #Cleaning
 RUN apt autoclean -y && apt autoremove -y
